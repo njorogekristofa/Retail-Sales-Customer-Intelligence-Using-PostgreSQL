@@ -1,6 +1,6 @@
-Business Insights — Duka Smart Electronics
+Business Insights - Duka Smart Electronics
 
-1. Sales almost doubled year on year — but January falls off a cliff
+1. Sales almost doubled year on year - but January falls off a cliff
 stock up in nov and dec. In Jan cut orders
 
 2. A quarter of customers bring in 70% of revenue
