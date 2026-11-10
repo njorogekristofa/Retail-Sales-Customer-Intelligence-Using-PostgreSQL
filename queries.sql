@@ -7,20 +7,91 @@ from customers;
 
 
 --3. Find customers living in Nairobi.
+SELECT *
+FROM customers
+WHERE city = 'Nairobi'
+ORDER BY customer_name;
+
 --4. Find customers registered after January 1, 2025.
+SELECT *
+FROM customers
+WHERE registration_date > DATE '2025-01-01'
+ORDER BY registration_date;
+
 --5. Display all unique customer cities.
+SELECT DISTINCT city
+FROM customers
+ORDER BY city;
+
 --6. Retrieve the 10 most recent orders.
+SELECT *
+FROM orders
+ORDER BY order_date DESC, order_id DESC
+LIMIT 10;
 --7. Find orders with unit prices above KSh 10,000.
+SELECT order_id, order_date, product_name, product_category, unit_price
+FROM orders
+WHERE unit_price > 10000
+ORDER BY unit_price DESC, order_id;
+
 --8. Find customers whose names start with A.
+SELECT *
+FROM customers
+WHERE customer_name LIKE 'A%'
+ORDER BY customer_name;
+
 --9. Retrieve orders with quantities between 2 and 5.
+SELECT *
+FROM orders
+WHERE quantity BETWEEN 2 AND 5
+ORDER BY quantity, order_id;
+
 --10. Find orders paid through M-Pesa.
+SELECT *
+FROM orders
+WHERE payment_method = 'M-Pesa'
+ORDER BY order_date, order_id;
+
 --11. Count all customers.
+SELECT COUNT(*) AS total_customers
+FROM customers;
+
 --12. Count all orders.
+SELECT COUNT(*) AS total_orders
+FROM orders;
+
 --13. Calculate completed-order revenue.
+SELECT ROUND(SUM(quantity * unit_price * (1 - discount / 100)), 2) AS completed_revenue
+FROM orders
+WHERE order_status = 'Completed';
+
 --14. Calculate the average completed-order value.
+SELECT ROUND(AVG(quantity * unit_price * (1 - discount / 100)), 2) AS avg_completed_order_value
+FROM orders
+WHERE order_status = 'Completed';
+
 --15. Find the highest and lowest product prices.
+'''SELECT MAX(unit_price) AS highest_unit_price,
+       MIN(unit_price) AS lowest_unit_price
+FROM orders;'''
+
 --16. Calculate revenue by product category.
+SELECT product_category,
+       ROUND(SUM(quantity * unit_price * (1 - discount / 100)), 2) AS revenue
+FROM orders
+WHERE order_status = 'Completed'
+GROUP BY product_category
+ORDER BY revenue DESC;
+
 --17. Count customers by city.
+SELECT product_category,
+       ROUND(SUM(quantity * unit_price * (1 - discount / 100)), 2) AS revenue
+FROM orders
+WHERE order_status = 'Completed'
+GROUP BY product_category
+ORDER BY revenue DESC;
+
+
 --18. Calculate quantity sold by product.
 --19. Find categories generating more than KSh 100,000 in revenue.
 --20. Calculate the percentage of cancelled orders.
