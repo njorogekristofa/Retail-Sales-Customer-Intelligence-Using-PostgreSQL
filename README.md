@@ -99,7 +99,7 @@ Run Q43 before Q46, which reads the view.
 - **Money questions use Completed orders only**; order counts include every status; customer counts
   are distinct.
 - **"Today" = `MAX(order_date)`** (2026-09-30), so results do not depend on when the queries run.
-- **Months** are `DATE_TRUNC('month', order_date)` — year and month together.
+- **Months** are `DATE_TRUNC('month', order_date)` - year and month together.
 - Money is rounded to 2 decimal places.
 
 Choices where a question was open to more than one reading (each is also commented in `queries.sql`):
@@ -118,10 +118,10 @@ Choices where a question was open to more than one reading (each is also comment
 ## Key findings
 
 1. **Accessories are 4.5% of revenue but 15.8% of profit** (42% margin vs ~10% for phones and laptops).
-2. **Discounts of 15% or more lose money** — those 97 orders made a combined loss of KSh 26,810.
+2. **Discounts of 15% or more lose money** - those 97 orders made a combined loss of KSh 26,810.
 3. **Revenue +86% year on year**, but January 2026 was 84% below December 2025.
 4. **34 High Value customers produce 70% of revenue.**
-5. **The VIP label does not match spending** — the top 5 customers are all labelled Retail.
+5. **The VIP label does not match spending** - the top 5 customers are all labelled Retail.
 6. **47 buying customers (36%) have lapsed for 90+ days**, including 6 VIPs.
 7. **Nairobi is 40% of revenue**, and 11.25% of orders are cancelled (M-Pesa 12.5% vs Bank Transfer 4.8%).
 
