@@ -93,6 +93,9 @@ ORDER BY revenue DESC;
 
 
 --18. Calculate quantity sold by product.
+
+
+
 --19. Find categories generating more than KSh 100,000 in revenue.
 --20. Calculate the percentage of cancelled orders.
 --21. Display orders with customer names and cities.
